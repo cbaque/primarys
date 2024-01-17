@@ -28,7 +28,11 @@ const routes: Routes = [
       {
         path: 'configuracion',
         loadChildren: () => import('../configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
-      }     
+      },
+      {
+        path: 'reporte-ventas',
+        loadChildren: () => import('../reporte-ventas/reporte-ventas.module').then( m => m.ReporteVentasPageModule)
+      },          
     ]
   },
   {

@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ConfiguracionPage } from './configuracion.page';
+import { UsuarioPage } from '../usuario/usuario.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ConfiguracionPage
-  }
+    component: ConfiguracionPage,
+  },
+
 ];
 
 @NgModule({

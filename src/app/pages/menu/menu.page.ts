@@ -19,7 +19,13 @@ export class MenuPage implements OnInit {
       "link" : "venta",
       "icon" : "trending-up",
       "selected" : "false"
-    }, 
+    },
+    {
+      "name" : "Reporte V.",
+      "link" : "reporte-ventas",
+      "icon" : "clipboard",
+      "selected" : "false"
+    },      
     {
       "name" : "Configuración",
       "link" : "configuracion",
