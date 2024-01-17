@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="nuevoProducto()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
@@ -23,8 +23,8 @@
         </ion-item>
 
         <ion-item-options>
-          <ion-item-option>Editar</ion-item-option>
-          <ion-item-option color="danger">Eliminar</ion-item-option>
+          <ion-item-option (click)="editarProducto()">Editar</ion-item-option>
+          <ion-item-option (click)="eliminarProducto()" color="danger">Eliminar</ion-item-option>
         </ion-item-options>        
       </ion-item-sliding>
     </ion-list>

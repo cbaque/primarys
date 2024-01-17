@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ProductoPageRoutingModule } from './producto-routing.module';
 
 import { ProductoPage } from './producto.page';
+import { NuevoPrdComponent } from './nuevo-prd/nuevo-prd.component';
+import { EditarPrdComponent } from './editar-prd/editar-prd.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import { ProductoPage } from './producto.page';
     IonicModule,
     ProductoPageRoutingModule
   ],
-  declarations: [ProductoPage]
+  declarations: [
+    ProductoPage,
+    NuevoPrdComponent,
+    EditarPrdComponent
+  ]
 })
 export class ProductoPageModule {}
