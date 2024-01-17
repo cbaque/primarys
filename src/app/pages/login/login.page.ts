@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  currentDate: Date;
+
   constructor(
     private router: Router,
-  ) { }
+  ) { 
+    this.currentDate = new Date();
+  }
 
   ngOnInit() {
   }

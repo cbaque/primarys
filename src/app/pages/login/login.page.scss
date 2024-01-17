@@ -6,3 +6,11 @@ ion-button {
 ion-icon {
     color: var(--ion-color-primarysoft);
 }
+
+ion-item {
+    --border-color: var(--ion-color-primarysoft);
+}
+
+h2, small {
+    color: var(--ion-color-primarysoft);
+}
