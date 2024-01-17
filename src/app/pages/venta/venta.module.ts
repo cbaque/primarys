@@ -8,6 +8,9 @@ import { VentaPageRoutingModule } from './venta-routing.module';
 
 import { VentaPage } from './venta.page';
 import { SharedModule } from '../../shared/shared.module';
+import { VentaClienteComponent } from './venta-cliente/venta-cliente.component';
+import { VentaProductoComponent } from './venta-producto/venta-producto.component';
+import { VentaNetaComponent } from './venta-neta/venta-neta.component';
 
 @NgModule({
   imports: [
@@ -17,6 +20,11 @@ import { SharedModule } from '../../shared/shared.module';
     VentaPageRoutingModule,
     SharedModule
   ],
-  declarations: [VentaPage]
+  declarations: [
+    VentaPage,
+    VentaClienteComponent,
+    VentaProductoComponent,
+    VentaNetaComponent
+  ]
 })
 export class VentaPageModule {}
