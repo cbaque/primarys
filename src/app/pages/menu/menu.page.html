@@ -1,25 +1,14 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="dashboard">
-      <ion-icon name="stats-chart"></ion-icon>
-      <ion-text class="ion-text-capitalize">
-        Inicio
-      </ion-text>
-    </ion-tab-button>
+    <ng-container *ngFor="let menu of menu">
 
-    <ion-tab-button tab="cliente">
-      <ion-icon name="person"></ion-icon>
-      <ion-text class="ion-text-capitalize">
-        Clientes
-      </ion-text>
-    </ion-tab-button>
-
-    <ion-tab-button tab="venta">
-      <ion-icon name="trending-up"></ion-icon>
-      <ion-text class="ion-text-capitalize">
-        Ventas
-      </ion-text>
-    </ion-tab-button>  
+      <ion-tab-button [tab]="menu.link" [selected]="menu.selected">
+        <ion-icon [name]="menu.icon"></ion-icon>
+        <ion-text class="ion-text-capitalize">
+          {{menu.name}}
+        </ion-text>
+      </ion-tab-button>
+    </ng-container>
 
   </ion-tab-bar>
 </ion-tabs>
