@@ -11,6 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { VentaClienteComponent } from './venta-cliente/venta-cliente.component';
 import { VentaProductoComponent } from './venta-producto/venta-producto.component';
 import { VentaNetaComponent } from './venta-neta/venta-neta.component';
+import { VentaCheckoutComponent } from './venta-checkout/venta-checkout.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { VentaNetaComponent } from './venta-neta/venta-neta.component';
     VentaPage,
     VentaClienteComponent,
     VentaProductoComponent,
-    VentaNetaComponent
+    VentaNetaComponent,
+    VentaCheckoutComponent
   ]
 })
 export class VentaPageModule {}
