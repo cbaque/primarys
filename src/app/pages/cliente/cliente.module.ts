@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ClientePageRoutingModule } from './cliente-routing.module';
 
 import { ClientePage } from './cliente.page';
+import { NuevoCteComponent } from './nuevo-cte/nuevo-cte.component';
+import { EditarCteComponent } from './editar-cte/editar-cte.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,10 @@ import { ClientePage } from './cliente.page';
     IonicModule,
     ClientePageRoutingModule
   ],
-  declarations: [ClientePage]
+  declarations: [
+    ClientePage,
+    NuevoCteComponent,
+    EditarCteComponent
+  ]
 })
 export class ClientePageModule {}
