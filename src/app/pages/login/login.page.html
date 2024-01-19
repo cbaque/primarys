@@ -34,8 +34,8 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-input label="Usuario" formControlName="email" labelPlacement="floating" name="usuario" type="text"></ion-input>
-            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-input label="Email" formControlName="email" labelPlacement="floating" name="email" type="text"></ion-input>
+            <ion-icon name="at" slot="start"></ion-icon>
 
             <ng-container *ngFor="let validation of validator.validationMessages.email">
               <ion-text color="danger" *ngIf="authForm.get('email')?.hasError(validation.type) && (authForm.get('email')?.dirty || authForm.get('email')?.touched)">

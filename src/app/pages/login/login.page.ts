@@ -43,8 +43,8 @@ export class LoginPage implements OnInit {
       ( res ) =>  { 
         this.loading = false;
         // this.nativeStorage.setItem('user', res);
-        // localStorage.setItem('token', JSON.stringify(res.token));
-        // this.dataSrv.currentUserSubject.next(res.token);
+        localStorage.setItem('token', JSON.stringify(res.token));
+        this.dataSrv.currentUserSubject.next(res.token);
         this.router.navigate([`/menu/dashboard`]);
         // this.smsSrv.isLogout.next(false);
       },
