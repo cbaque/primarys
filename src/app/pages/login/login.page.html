@@ -6,49 +6,81 @@
 
 <ion-content [fullscreen]="true">
   <ion-grid fixed>
-    <ion-row class="ion-text-center">
-      <ion-col size="12">
-        <ion-text color="dark">
-          <h2>Acceso al Sistema</h2>
-        </ion-text>
-      </ion-col>
-    </ion-row>
+    <form [formGroup]="authForm" (ngSubmit)="login()">
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <ion-text color="dark">
+            <h2>Acceso al Sistema</h2>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input required label="Empresa" labelPlacement="floating" name="empresa" type="text" formControlName="business"></ion-input>
+            <ion-icon name="podium" slot="start"></ion-icon>
 
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-input label="Empresa" labelPlacement="floating" name="empresa" type="text"></ion-input>
-          <ion-icon name="podium" slot="start"></ion-icon>
-        </ion-item>        
-      </ion-col>
-    </ion-row>
+            <ng-container *ngFor="let validation of validator.validationMessages.business">
+              <ion-text color="danger" *ngIf="authForm.get('business')?.hasError(validation.type) && (authForm.get('business')?.dirty || authForm.get('business')?.touched)">
+                {{ validation.message }}
+              </ion-text>
+            </ng-container>
 
-    <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-input label="Usuario" labelPlacement="floating" name="usuario" type="text"></ion-input>
-          <ion-icon name="person" slot="start"></ion-icon>
-        </ion-item>        
-      </ion-col>
-    </ion-row>
+          </ion-item>        
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-input label="Usuario" formControlName="email" labelPlacement="floating" name="usuario" type="text"></ion-input>
+            <ion-icon name="person" slot="start"></ion-icon>
 
-    <ion-row>
-      <ion-col size="12" class="ion-padding-bottom">
-        <ion-item>
-          <ion-input label="Contraseña" labelPlacement="floating" name="password" type="password"></ion-input>
-          <ion-icon name="lock-closed" slot="start"></ion-icon>
-        </ion-item>
-      </ion-col>
+            <ng-container *ngFor="let validation of validator.validationMessages.email">
+              <ion-text color="danger" *ngIf="authForm.get('email')?.hasError(validation.type) && (authForm.get('email')?.dirty || authForm.get('email')?.touched)">
+                {{ validation.message }}
+              </ion-text>
+            </ng-container>
 
-    </ion-row>  
+          </ion-item>        
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12" class="ion-padding-bottom">
+          <ion-item>
+            <ion-input label="Password" labelPlacement="floating" name="password" type="password" formControlName="password"></ion-input>
+            <ion-icon name="lock-closed" slot="start"></ion-icon>
 
-    <ion-row class="ion-padding-top ion-text-center">
-      <ion-col size="12">
-        <ion-button fill="solid" expand="full" type="button" size="large" (click)="login()">
-          <ion-text class="ion-text-capitalize">Iniciar</ion-text>
-        </ion-button>
-      </ion-col>
-    </ion-row>
+            <ng-container *ngFor="let validation of validator.validationMessages.password">
+              <ion-text color="danger" *ngIf="authForm.get('password')?.hasError(validation.type) && (authForm.get('password')?.dirty || authForm.get('password')?.touched)">
+                {{ validation.message }}
+              </ion-text>
+            </ng-container>
+
+          </ion-item>
+        </ion-col>
+  
+      </ion-row>  
+  
+      <ion-row class="ion-padding-top ion-text-center">
+        <ion-col size="12">
+          <ion-button fill="solid" expand="full" type="submit" size="large" [disabled]="authForm.invalid || loading">
+
+            <ng-container *ngIf="loading; else ok">
+              Por favor espere...<ion-spinner name="bubbles"></ion-spinner>
+            </ng-container>
+            <ng-template #ok>
+              Iniciar
+            </ng-template>
+
+            <!-- <ion-text class="ion-text-capitalize">Iniciar</ion-text> -->
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
 
 
   </ion-grid>
